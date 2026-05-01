@@ -91,15 +91,14 @@ After running the generator, the main files in `Results_Course` are:
 
 The model loader reduces the raw attack labels into the three presentation classes: normal, FDI, and cyber-physical.
 
-## Presentation Figures
 
 ### Where Attacks Concentrate
 
 ![Most frequently attacked inverters and FDI sensors](plot_attack_frequency_rankings.png)
 
-This figure is useful early in the presentation because it makes the problem concrete. The red bars show which PV inverters are most often manipulated by the cyber-physical attack process. The blue bars show which measurement sensors are most often selected by the FDI process.
+This figure is useful because it makes the problem concrete. The red bars show which PV inverters are most often manipulated by the cyber-physical attack process. The blue bars show which measurement sensors are most often selected by the FDI process.
 
-The takeaway: the attacks are spatially localized. A plain fully connected or recurrent model has to discover that locality from raw vectors, while a GCN starts with the feeder topology as a structural prior.
+Attacks are spatially localized. A plain fully connected or recurrent model has to discover that locality from raw vectors, while a GCN starts with the feeder topology as a structural prior.
 
 ### How the Classes Differ Across the Feeder
 
