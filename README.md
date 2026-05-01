@@ -95,7 +95,7 @@ The model loader reduces the raw attack labels into the three presentation class
 
 ### Where Attacks Concentrate
 
-![Most frequently attacked inverters and FDI sensors](../Results_Course/plot_attack_frequency_rankings.png)
+![Most frequently attacked inverters and FDI sensors](plot_attack_frequency_rankings.png)
 
 This figure is useful early in the presentation because it makes the problem concrete. The red bars show which PV inverters are most often manipulated by the cyber-physical attack process. The blue bars show which measurement sensors are most often selected by the FDI process.
 
@@ -103,7 +103,7 @@ The takeaway: the attacks are spatially localized. A plain fully connected or re
 
 ### How the Classes Differ Across the Feeder
 
-![Class-average voltage magnitude by node](../Results_Course/plot_node_voltage_variability.png)
+![Class-average voltage magnitude by node](plot_node_voltage_variability.png)
 
 This figure is a good bridge from the dataset to the model. The top panel compares class-average voltage magnitude by node. The bottom panel subtracts the normal profile and shows how much FDI and cyber-physical windows shift the voltage pattern.
 
@@ -124,13 +124,7 @@ python Course_Project/data_generation.py \
   --output-dir /home/sa165267/Desktop/AttackJuly14_Paper/Results_Course
 ```
 
-Generate presentation figures:
-
-```bash
-python Course_Project/Model/generate_presentation_plots.py \
-  --data-dir /home/sa165267/Desktop/AttackJuly14_Paper/Results_Course \
-  --output-dir /home/sa165267/Desktop/AttackJuly14_Paper/Results_Course
-```
+<img width="2610" height="1335" alt="plot_node_voltage_variability" src="https://github.com/user-attachments/assets/d85db136-3cd9-4bac-b2d3-fd973abf2c2b" />
 
 Train the gated-attention GCN:
 
@@ -141,18 +135,3 @@ python Course_Project/Model/train.py \
 ```
 
 The default training settings follow the report setup: 20 time steps, 156 nodes, Chebyshev order 6, two graph-convolution layers, 10 hidden channels, a 512-width fully connected layer, batch size 200, and Adam with learning rate `1e-4`.
-
-## Suggested Presentation Flow
-
-1. Start with the security story: FDI attacks corrupt what the operator sees; cyber-physical attacks alter what the grid actually does.
-2. Show the boundary-stress idea: normal operation near the deadband edge can look suspicious because legitimate controller action creates transients.
-3. Use the attack-frequency figure to explain why topology matters.
-4. Use the voltage-by-node figure to show that the class differences are subtle but structured.
-5. Introduce the model: complex spatio-temporal GCN first, gated node/time/channel attention second.
-6. End with the intuition behind the residual gate: the attention module can turn up important graph features without turning off the backbone.
-
-## Why This README Exists
-
-This folder is meant to be readable as a self-contained project package. A reviewer should be able to open it, understand the dataset, understand the model, reproduce the plots, and see how the implementation connects back to the paper narrative.
-
-In other words: the code generates the hard cases, the GCN follows the grid, and the attention module learns where to look.
