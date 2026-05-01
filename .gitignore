@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+runs/
+figures/*.png
+figures/*.pdf
+*.egg-info/
+
+# Large local data artifacts remain in the working directory.
+*.npy
+*.pkl
+*.parquet
+*.pth
+*.pt
+
+# Legacy exploratory assets from the original working directory.
+AttackGenerationViaSMARTDS*.ipynb
+hi.ipynb
+P4U/
+model/
+networks/
+data_loader.py
+graph_loader.py
+measurements.py
+bus_voltage_loads.csv
+load_pv_info.xlsx
+all_measurements.pkl
