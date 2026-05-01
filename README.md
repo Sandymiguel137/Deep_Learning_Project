@@ -1,8 +1,8 @@
 # Gated-Attention GCN for Smart-Grid Attack Detection
 
-This folder contains the course-project version of a complete smart-grid cyber-attack detection pipeline: a boundary-stress dataset generator, a complex-valued graph neural network with gated attention, and presentation-ready figures that explain why the task is hard.
+This folder contains the course-project version of a complete smart-grid cyber-attack detection pipeline: a boundary-stress dataset generator, and a complex-valued graph neural network with gated attention.
 
-The short version: the simulator creates voltage-phasor windows from a SMART-DS-style distribution feeder, deliberately pushes the operating point near the volt-var deadband edge, injects false-data and cyber-physical attacks, and saves everything in a format that the model can train on directly.
+The simulator creates voltage-phasor windows from a SMART-DS-style distribution feeder, deliberately pushes the operating point near the volt-var deadband edge, injects false-data and cyber-physical attacks, and saves everything in a format that the model can train on directly.
 
 ## Project Idea
 
