@@ -124,8 +124,6 @@ python Course_Project/data_generation.py \
   --output-dir /home/sa165267/Desktop/AttackJuly14_Paper/Results_Course
 ```
 
-<img width="2610" height="1335" alt="plot_node_voltage_variability" src="https://github.com/user-attachments/assets/d85db136-3cd9-4bac-b2d3-fd973abf2c2b" />
-
 Train the gated-attention GCN:
 
 ```bash
