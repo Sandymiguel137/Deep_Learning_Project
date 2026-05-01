@@ -18,7 +18,7 @@ The key difficulty is that FDI and cyber-physical attacks require different resp
 
 ## The Boundary-Stress Dataset
 
-The dataset generator in [data_generation.py](/home/sa165267/Desktop/AttackJuly14_Paper/Course_Project/data_generation.py) extends the original notebook-style data generation flow with the main data contribution from the paper: boundary-stress sampling.
+The dataset generator in [Attack_generation.py](/home/sa165267/Desktop/AttackJuly14_Paper/Course_Project/data_generation.py) extends the original notebook-style data generation flow with the main data contribution from the paper: boundary-stress sampling.
 
 Instead of keeping inverter voltages comfortably inside the volt-var deadband, the generator keeps the feeder near the lower deadband edge. Then it adds slow sinusoidal load perturbations so normal operation repeatedly crosses the controller threshold. This makes normal windows contain legitimate control transients, which are exactly the kind of events that can look suspicious to a weak detector.
 
