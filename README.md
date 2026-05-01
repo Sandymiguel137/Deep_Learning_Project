@@ -18,7 +18,7 @@ The key difficulty is that FDI and cyber-physical attacks require different resp
 
 ## The Boundary-Stress Dataset
 
-The dataset generator in [Attack_generation.py](/home/sa165267/Desktop/AttackJuly14_Paper/Course_Project/data_generation.py) extends the original notebook-style data generation flow with the main data contribution from the paper: boundary-stress sampling.
+The dataset generator in Attack_generation.py generates attacks on the SMART-DS dataset and add boundary-stress sampling.
 
 Instead of keeping inverter voltages comfortably inside the volt-var deadband, the generator keeps the feeder near the lower deadband edge. Then it adds slow sinusoidal load perturbations so normal operation repeatedly crosses the controller threshold. This makes normal windows contain legitimate control transients, which are exactly the kind of events that can look suspicious to a weak detector.
 
@@ -26,7 +26,7 @@ That is the point of the dataset: make the normal class less boring, so the mode
 
 ## Model Story
 
-The model lives in [Model/](/home/sa165267/Desktop/AttackJuly14_Paper/Course_Project/Model). It follows the same spirit as the original complex-valued spatio-temporal GCN code in the parent repository, but adds the gated-attention mechanism described in the report.
+The model is a complex-valued spatio-temporal GCN that adds the gated-attention mechanism described in the report.
 
 The input is a complex voltage window:
 
